@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DigiSathi - Your personal guide to digital India. Learn how to use WhatsApp, Paytm, Google Apps and more." />
+    <title>DigiSathi - Digital Empowerment Assistant</title>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/png" href="public/favicon-32x32.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo" aria-label="DigiSathi Logo">
+                <i class="fas fa-robot" aria-hidden="true"></i>
+                <span>DigiSathi</span>
+            </div>
+            <img src="assets/dp.jpg" alt="User profile picture" class="profile-pic">
+        </header>
+        
+        <main>
+            <div class="welcome-section">
+                <h1>Welcome to DigiSathi!</h1>
+                <p class="subtitle">Your personal guide to digital India</p>
+                
+                <div class="app-options">
+                    <div class="app-card" onclick="navigateToChat('whatsapp')" role="button" tabindex="0" aria-label="Learn about WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span>WhatsApp</span>
+                    </div>
+                    <div class="app-card" onclick="navigateToChat('paytm')" role="button" tabindex="0" aria-label="Learn about Paytm">
+                        <i class="fas fa-wallet" aria-hidden="true"></i>
+                        <span>Paytm</span>
+                    </div>
+                    <div class="app-card" onclick="navigateToChat('google')" role="button" tabindex="0" aria-label="Learn about Google Apps">
+                        <i class="fab fa-google" aria-hidden="true"></i>
+                        <span>Google Apps</span>
+                    </div>
+                </div>
+                
+                <div class="search-container">
+                    <p>Ask me anything about these apps:</p>
+                    <div class="search-bar">
+                        <input type="text" id="userQuery" placeholder="E.g. How to send money on Paytm?" aria-label="Search for help" />
+                        <button onclick="searchHelp()" aria-label="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

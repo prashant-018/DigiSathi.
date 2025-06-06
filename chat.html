@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigiSathi - Your Digital Guide</title>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/png" href="public/favicon-32x32.png" />
+
+    <script src="https://js.puter.com/v2/"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+            <div class="logo">
+                <img src="https://img.icons8.com/fluency/48/000000/chatbot.png" alt="DigiSathi" class="logo-img">
+                <span>DigiSathi</span>
+            </div>
+        </header>
+        
+        <div class="welcome-section">
+            <h1>Welcome to DigiSathi!</h1>
+            <p>Your personal guide to digital India</p>
+        </div>
+        
+        <div class="app-grid">
+            <div class="app-card" onclick="setDefaultQuestion('How to use WhatsApp for payments?')">
+                <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" class="app-icon">
+                <div class="app-name">WhatsApp</div>
+            </div>
+            <div class="app-card" onclick="setDefaultQuestion('How to send money using Paytm?')">
+                <img src="https://img.icons8.com/color/48/000000/paytm.png" alt="Paytm" class="app-icon">
+                <div class="app-name">Paytm</div>
+            </div>
+            <div class="app-card" onclick="setDefaultQuestion('How to use Google Pay for UPI payments?')">
+                <img src="https://img.icons8.com/color/48/000000/google-pay.png" alt="Google Pay" class="app-icon">
+                <div class="app-name">Google Pay</div>
+            </div>
+            <div class="app-card" onclick="setDefaultQuestion('How to book tickets on IRCTC?')">
+                <img src="https://img.icons8.com/color/48/000000/train.png" alt="IRCTC" class="app-icon">
+                <div class="app-name">IRCTC</div>
+            </div>
+            <div class="app-card" onclick="setDefaultQuestion('How to use Aadhaar services online?')">
+                <img src="https://img.icons8.com/color/48/000000/indian-man.png" alt="Aadhaar" class="app-icon">
+                <div class="app-name">Aadhaar</div>
+            </div>
+            <div class="app-card" onclick="setDefaultQuestion('How to pay electricity bill online?')">
+                <img src="https://img.icons8.com/color/48/000000/electricity.png" alt="Utility" class="app-icon">
+                <div class="app-name">Utility Bills</div>
+            </div>
+        </div>
+        
+        <div class="example-text">
+            Ask me anything about these apps and services
+        </div>
+        
+        <div class="suggestions">
+            <button class="suggestion-chip" onclick="setDefaultQuestion('How to send money via UPI?')">Send money via UPI</button>
+            <button class="suggestion-chip" onclick="setDefaultQuestion('How to recharge mobile online?')">Mobile recharge</button>
+            <button class="suggestion-chip" onclick="setDefaultQuestion('How to check Aadhaar status?')">Aadhaar status</button>
+            <button class="suggestion-chip" onclick="setDefaultQuestion('How to book train tickets?')">Train tickets</button>
+        </div>
+        
+        <div id="chat-box"></div>
+        <div class="chat-input-container">
+            <input type="text" id="userInput" placeholder="Ask your question about digital India..." autocomplete="off">
+            <button class="send-button" onclick="getResponse()">
+                <i class="fas fa-paper-plane send-icon"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>
