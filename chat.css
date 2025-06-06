@@ -21,13 +21,14 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     color: var(--text-primary);
+    padding: 0;
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: min(800px, 96%);
     margin: 0 auto;
-    padding: 1.25rem;
+    padding: clamp(0.75rem, 3vw, 1.25rem);
     background-color: white;
     min-height: 100vh;
 }
@@ -36,95 +37,104 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    padding-bottom: clamp(0.75rem, 2vw, 1rem);
     border-bottom: 1px solid var(--border-color);
 }
 
 .back-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: clamp(0.2rem, 1vw, 0.3rem);
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 500;
+    font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    gap: clamp(0.4rem, 2vw, 0.6rem);
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
 }
 
 .logo-img {
-    width: clamp(2rem, 6vw, 2.5rem);
-    height: clamp(2rem, 6vw, 2.5rem);
+    width: clamp(1.8rem, 6vw, 2.5rem);
+    height: clamp(1.8rem, 6vw, 2.5rem);
     border-radius: 50%;
     object-fit: cover;
 }
 
 .welcome-section {
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding: 1.5rem 1rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 2vw, 1rem);
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
-    border-radius: 0.75rem;
+    border-radius: clamp(0.5rem, 2vw, 0.75rem);
 }
 
 .welcome-section h1 {
-    font-size: clamp(1.4rem, 5vw, 1.75rem);
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.3rem, 5vw, 1.75rem);
+    margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
 }
 
 .welcome-section p {
-    font-size: clamp(0.9rem, 3vw, 1rem);
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    line-height: 1.4;
 }
 
 .app-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(5rem, 30vw), 1fr));
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin: clamp(1rem, 3vw, 1.5rem) 0;
 }
 
 .app-card {
-    padding: 1rem 0.5rem;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(0.5rem, 1vw, 0.5rem);
     text-align: center;
-    border-radius: 0.75rem;
+    border-radius: clamp(0.5rem, 2vw, 0.75rem);
     border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.app-card:active {
+    transform: scale(0.96);
 }
 
 .app-icon {
-    width: clamp(2.5rem, 8vw, 3rem);
-    height: clamp(2.5rem, 8vw, 3rem);
-    margin: 0 auto 0.5rem;
+    width: clamp(2.2rem, 8vw, 3rem);
+    height: clamp(2.2rem, 8vw, 3rem);
+    margin: 0 auto clamp(0.3rem, 1vw, 0.5rem);
 }
 
 .app-name {
-    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    font-size: clamp(0.75rem, 3vw, 0.9rem);
+    font-weight: 500;
 }
 
 #chat-box {
-    height: 50vh;
+    height: clamp(250px, 50vh, 400px);
     max-height: 400px;
     overflow-y: auto;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
+    border-radius: clamp(0.5rem, 2vw, 0.75rem);
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: clamp(0.5rem, 1.5vw, 0.8rem);
 }
 
 .message {
     max-width: 85%;
-    padding: 0.8rem 1rem;
-    border-radius: 1rem;
-    font-size: clamp(0.9rem, 3vw, 1rem);
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(0.8rem, 2vw, 1rem);
+    border-radius: clamp(0.8rem, 3vw, 1rem);
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    line-height: 1.4;
 }
 
 .user-message {
@@ -141,86 +151,102 @@ header {
 
 .chat-input-container {
     display: flex;
-    gap: 0.6rem;
-    margin-bottom: 1rem;
+    gap: clamp(0.4rem, 2vw, 0.6rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
 }
 
 #userInput {
     flex: 1;
-    padding: 0.8rem 1rem;
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(0.8rem, 2vw, 1rem);
     border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
-    font-size: clamp(0.9rem, 3vw, 1rem);
+    border-radius: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.85rem, 3vw, 1rem);
 }
 
 .send-button {
-    width: clamp(2.8rem, 10vw, 3.2rem);
-    height: clamp(2.8rem, 10vw, 3.2rem);
+    width: clamp(2.5rem, 10vw, 3.2rem);
+    height: clamp(2.5rem, 10vw, 3.2rem);
     border-radius: 50%;
     background-color: var(--primary-color);
     color: white;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .suggestions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1rem;
+    gap: clamp(0.4rem, 2vw, 0.6rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
 }
 
 .suggestion-chip {
-    padding: 0.5rem 1rem;
-    font-size: clamp(0.8rem, 3vw, 0.9rem);
-    border-radius: 1rem;
+    padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.8rem, 2vw, 1rem);
+    font-size: clamp(0.75rem, 3vw, 0.9rem);
+    border-radius: clamp(0.8rem, 3vw, 1rem);
     background-color: var(--primary-light);
     color: var(--primary-color);
     border: none;
+    cursor: pointer;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-    
     .app-grid {
-        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(4.5rem, 28vw), 1fr));
     }
     
     #chat-box {
-        height: 40vh;
-        padding: 0.8rem;
+        height: clamp(200px, 45vh, 350px);
     }
 }
 
 @media (max-width: 480px) {
     .app-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(min(4rem, 30vw), 1fr));
     }
     
     #chat-box {
-        height: 50vh;
-        max-height: 300px;
+        height: clamp(200px, 55vh, 300px);
     }
     
     .chat-input-container {
-        flex-direction: column;
+        flex-direction: row; /* Keep it row even on small devices */
     }
     
     .send-button {
-        width: 100%;
-        border-radius: 1.5rem;
-        height: 2.8rem;
+        width: clamp(2.8rem, 12vw, 3.2rem);
+        height: clamp(2.8rem, 12vw, 3.2rem);
+    }
+}
+
+@media (max-width: 360px) {
+    .app-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .app-card {
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .suggestions {
+        justify-content: center;
     }
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
     #chat-box {
-        height: 60vh;
+        height: 65vh;
     }
     
     .welcome-section {
-        padding: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .app-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(4rem, 20vw), 1fr));
+        gap: 0.5rem;
     }
 }
