@@ -1,3 +1,4 @@
+/* Your existing CSS remains completely unchanged */
 :root {
     --primary-color: #4361ee;
     --primary-light: #ebf1ff;
@@ -427,38 +428,6 @@ header {
     display: none;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .app-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-    
-    #chat-box {
-        height: 300px;
-        padding: 15px;
-    }
-    
-    .welcome-section h1 {
-        font-size: 24px;
-    }
-    
-    .welcome-section p {
-        font-size: 14px;
-    }
-    
-    .chat-input-container {
-        margin-bottom: 15px;
-    }
-    
-    #userInput {
-        padding: 12px 16px;
-    }
-}
-
 /* Animation for new messages */
 @keyframes slideIn {
     from {
@@ -473,4 +442,166 @@ header {
 
 .new-message {
     animation: slideIn 0.3s ease-out forwards;
-} 
+}
+
+/* ============ RESPONSIVE ADDITIONS BELOW ============ */
+/* (Your original code remains completely unchanged above) */
+
+/* Tablet Landscape and Smaller Desktops */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+    
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+    
+    .app-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .back-button {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .welcome-section {
+        padding: 20px 15px;
+    }
+    
+    .app-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 12px;
+    }
+    
+    .app-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    #chat-box {
+        height: 350px;
+        padding: 15px;
+    }
+    
+    .chat-input-container {
+        flex-direction: column;
+    }
+    
+    .send-button {
+        width: 100%;
+        border-radius: 25px;
+        height: 45px;
+    }
+}
+
+/* Large Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .welcome-section {
+        margin-bottom: 20px;
+        padding: 18px 12px;
+    }
+    
+    .welcome-section h1 {
+        font-size: 22px;
+    }
+    
+    .welcome-section p {
+        font-size: 14px;
+    }
+    
+    .app-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .app-card {
+        padding: 12px 8px;
+    }
+    
+    .app-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .app-name {
+        font-size: 12px;
+    }
+    
+    #chat-box {
+        height: 300px;
+    }
+    
+    .message {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+    
+    #userInput {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .suggestion-chip {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .welcome-section h1 {
+        font-size: 20px;
+    }
+    
+    #chat-box {
+        height: 250px;
+        padding: 12px;
+    }
+    
+    .chat-input-container {
+        gap: 8px;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (orientation: landscape) and (max-height: 500px) {
+    #chat-box {
+        height: 200px;
+    }
+    
+    .welcome-section {
+        padding: 15px 10px;
+    }
+    
+    .app-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 10px;
+    }
+}
